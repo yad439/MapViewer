@@ -6,4 +6,8 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="XAML.MapControl" Version="5.6.0"/>
+  </ItemGroup>
+
 </Project>

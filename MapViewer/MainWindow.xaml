@@ -4,9 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MapViewer"
+        xmlns:mapControl="clr-namespace:MapControl;assembly=MapControl.WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" x:ClassModifier="internal">
     <Grid>
-
+        <mapControl:Map x:Name="Map" MaxZoomLevel="22" ZoomLevel="11" Center="55.0,82.9">
+            <mapControl:Map.MapProjection>
+                <mapControl:WebMercatorProjection/>
+            </mapControl:Map.MapProjection>
+            <mapControl:Map.MapLayer>
+                <mapControl:WmsImageLayer ServiceUri="http://ows.terrestris.de/osm/service" Layers="OSM-WMS"/>
+            </mapControl:Map.MapLayer>
+        </mapControl:Map>
     </Grid>
 </Window>
