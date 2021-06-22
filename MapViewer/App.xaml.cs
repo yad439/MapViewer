@@ -8,7 +8,10 @@ namespace MapViewer {
 			base.OnStartup(e);
 
 			var services = new ServiceCollection()
-						   .AddSingleton<MainWindow>().BuildServiceProvider();
+						   .AddSingleton<MainWindow>()
+						   .AddSingleton<MapViewModel>()
+						   .BuildServiceProvider();
+
 			var mainWindow = services.GetService<MainWindow>();
 			Debug.Assert(mainWindow != null, nameof(mainWindow) + " != null");
 			mainWindow.Show();
