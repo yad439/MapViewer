@@ -1,6 +1,6 @@
 namespace MapViewer {
 	internal sealed class GasStationOsmrDto {
-		internal double Lat { get; set; }
-		internal double Lon { get; set; }
+		public double Lat { get; set; }
+		public double Lon { get; set; }
 	}
 }
