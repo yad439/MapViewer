@@ -5,7 +5,7 @@ namespace MapViewer {
 		public ObservableCollection<GasStation> Stations { get; } = new();
 
 		public MapViewModel(OpenStreetMapRuRepository repository) {
-			foreach (var station in repository.GetStationsInArea(App.NovosibirskArea)!) {
+			foreach (var station in repository.GetStationsInArea(Configuration.NovosibirskArea)!) {
 				Stations.Add(station);
 			}
 		}

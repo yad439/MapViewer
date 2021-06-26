@@ -6,13 +6,6 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace MapViewer {
 	internal sealed partial class App {
-		public static readonly MapRectangle NovosibirskArea = new() {
-																		North = 55.2,
-																		South = 54.7,
-																		East = 83.25,
-																		West = 82.6
-																	};
-
 		protected override void OnStartup(StartupEventArgs e) {
 			base.OnStartup(e);
 
