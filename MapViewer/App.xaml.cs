@@ -16,6 +16,7 @@ namespace MapViewer {
 						   .AddSingleton<IMapper>(_ => new Mapper(mapping))
 						   .AddSingleton<OpenStreetMapRuDataSource>()
 						   .AddSingleton<OpenStreetMapRuRepository>()
+						   .AddSingleton<LiteDbRepository>()
 						   .BuildServiceProvider();
 
 			var mainWindow = services.GetService<MainWindow>();
