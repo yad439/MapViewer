@@ -4,8 +4,8 @@ namespace MapViewer {
 	internal sealed class MapViewModel {
 		public ObservableCollection<GasStation> Stations { get; } = new();
 
-		public MapViewModel(OpenStreetMapRuRepository repository) {
-			foreach (var station in repository.GetStationsInArea(Configuration.NovosibirskArea)!) {
+		public MapViewModel(DataService repository) {
+			foreach (var station in repository.GetAll()) {
 				Stations.Add(station);
 			}
 		}
