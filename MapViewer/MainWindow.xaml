@@ -21,7 +21,7 @@
             <mapControl:MapItemsControl ItemsSource="{Binding Stations}">
                 <mapControl:MapItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <mapControl:Pushpin Location="{Binding Location}"/>
+                        <mapControl:Pushpin Location="{Binding Location}" Content="{Binding Name}"/>
                     </DataTemplate>
                 </mapControl:MapItemsControl.ItemTemplate>
                 <mapControl:MapItemsControl.ItemContainerStyle>

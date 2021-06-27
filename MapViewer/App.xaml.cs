@@ -29,10 +29,9 @@ namespace MapViewer {
 		private static MapperConfiguration ConfigureMapping() {
 			var mapperConfiguration = new MapperConfiguration(cfg => {
 				cfg.CreateMap<GasStationOsmrDto, GasStation>()
-				   .ForMember(
-							  dest => dest.Location,
-							  opt => opt.MapFrom(src => new Location(src.Lat, src.Lon))
-							 );
+				   .ForMember(dest => dest.Location, opt => opt.MapFrom(src => new Location(src.Lat, src.Lon)))
+				   .ForMember(dest => dest.Id, opt => opt.Ignore())
+				   .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.NameRu));
 			});
 			mapperConfiguration.AssertConfigurationIsValid();
 			return mapperConfiguration;
