@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using AutoMapper;
 
 namespace MapViewer {
@@ -11,9 +12,9 @@ namespace MapViewer {
 			_mapper = mapper;
 		}
 
-		internal IEnumerable<GasStation>? GetStationsInArea(MapRectangle area) {
+		internal GasStation[]? GetInArea(MapRectangle area) {
 			var data = _dataSource.GetStationsInArea(area);
-			return _mapper.Map<IEnumerable<GasStationOsmrDto>?, IEnumerable<GasStation>?>(data?.Data);
+			return _mapper.Map<IEnumerable<GasStationOsmrDto>?, IEnumerable<GasStation>?>(data?.Data)?.ToArray();
 		}
 	}
 }

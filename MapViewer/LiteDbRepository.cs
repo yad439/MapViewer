@@ -1,14 +1,15 @@
 using System.Collections.Generic;
+using System.Linq;
 using LiteDB;
 
 namespace MapViewer {
 	internal sealed class LiteDbRepository {
 		private readonly string _file = Configuration.AppDirectory + "\\stations.db";
 
-		internal IEnumerable<GasStation> GetAll() {
+		internal GasStation[] GetAll() {
 			using var database = new LiteDatabase(_file);
 			var collection = database.GetCollection<GasStation>();
-			return collection.FindAll();
+			return collection.FindAll().ToArray();
 		}
 
 		internal void InsertAll(IEnumerable<GasStation> data) {
