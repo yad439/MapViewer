@@ -1,3 +1,6 @@
+using System.IO;
+using System.Reflection;
+
 namespace MapViewer {
 	internal static class Configuration {
 		internal static readonly MapRectangle NovosibirskArea = new() {
@@ -7,6 +10,6 @@ namespace MapViewer {
 																		  West = 82.6
 																	  };
 
-		internal static readonly string AppDirectory = System.Reflection.Assembly.GetEntryAssembly()!.Location;
+		internal static readonly string AppDirectory = Path.GetDirectoryName(Assembly.GetEntryAssembly()!.Location)!;
 	}
 }
