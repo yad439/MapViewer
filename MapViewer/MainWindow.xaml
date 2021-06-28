@@ -10,12 +10,25 @@
     <Window.Resources>
     </Window.Resources>
     <Grid>
-        <mapControl:Map MaxZoomLevel="22" ZoomLevel="11" Center="55.0,82.9">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <ListBox x:Name="GasStationListBox" Grid.Column="0" ItemsSource="{Binding Stations}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <local:StationListEntryControl DataContext="{Binding}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <mapControl:Map Grid.Column="1" MaxZoomLevel="22" ZoomLevel="11" Center="55.0,82.9">
             <mapControl:Map.MapProjection>
                 <mapControl:WebMercatorProjection/>
             </mapControl:Map.MapProjection>
             <mapControl:Map.MapLayer>
-                <mapControl:WmsImageLayer ServiceUri="http://ows.terrestris.de/osm/service" Layers="OSM-WMS"/>
+                <mapControl:WmsImageLayer ServiceUri="https://ows.terrestris.de/osm/service" Layers="OSM-WMS"/>
             </mapControl:Map.MapLayer>
             
             <mapControl:MapItemsControl ItemsSource="{Binding Stations}">
