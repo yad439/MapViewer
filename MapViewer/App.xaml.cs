@@ -32,6 +32,8 @@ namespace MapViewer {
 				   .ForMember(dest => dest.Location, opt => opt.MapFrom(src => new Location(src.Lat, src.Lon)))
 				   .ForMember(dest => dest.Id, opt => opt.Ignore())
 				   .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.NameRu));
+				cfg.CreateMap<GasStationViewModel, GasStationEditDto>().ReverseMap();
+				cfg.CreateMap<GasStation, GasStationViewModel>();
 			});
 			mapperConfiguration.AssertConfigurationIsValid();
 			return mapperConfiguration;
