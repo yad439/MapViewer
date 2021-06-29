@@ -1,13 +1,12 @@
-using System.Collections.ObjectModel;
+using System.Collections.Generic;
+using AutoMapper;
 
 namespace MapViewer {
 	internal sealed class MapViewModel {
-		public ObservableCollection<GasStation> Stations { get; } = new();
+		public IEnumerable<GasStationViewModel> Stations { get; }
 
-		public MapViewModel(DataService repository) {
-			foreach (var station in repository.GetAll()) {
-				Stations.Add(station);
-			}
+		public MapViewModel(DataService repository, IMapper mapper) {
+			Stations = mapper.Map<IEnumerable<GasStationViewModel>>(repository.GetAll());
 		}
 	}
 }
