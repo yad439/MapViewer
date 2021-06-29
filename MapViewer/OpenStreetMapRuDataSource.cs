@@ -5,6 +5,7 @@ namespace MapViewer {
 	internal sealed class OpenStreetMapRuDataSource {
 		private readonly RestClient _client = new("http://openstreetmap.ru/api/poi");
 
+		// ReSharper disable once ReturnTypeCanBeNotNullable
 		internal OsmrStationListDto? GetStationsInArea(MapRectangle area) {
 			var request = new RestRequest("", DataFormat.Json)
 						  .AddQueryParameter("action", "getpoibbox")
