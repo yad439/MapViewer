@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:MapViewer"
         xmlns:mapControl="clr-namespace:MapControl;assembly=MapControl.WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" x:ClassModifier="internal" d:DataContext="{d:DesignInstance local:MapViewModel}">
+        Title="Map viewer" Height="450" Width="800" x:ClassModifier="internal"
+        d:DataContext="{d:DesignInstance local:MapViewModel}">
     <Window.Resources>
     </Window.Resources>
     <Grid>
@@ -14,34 +15,40 @@
             <ColumnDefinition Width="200" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
-        <ListBox x:Name="GasStationListBox" Grid.Column="0" ItemsSource="{Binding Stations}">
+        <Button Grid.Column="0" Grid.Row="0" Content="Edit" Margin="8" Click="EditStation"/>
+
+        <ListBox x:Name="GasStationListBox" Grid.Column="0" Grid.Row="1" ItemsSource="{Binding Stations}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <local:StationListEntryControl DataContext="{Binding}"/>
+                    <local:StationListEntryControl DataContext="{Binding}" />
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <mapControl:Map Grid.Column="1" MaxZoomLevel="22" ZoomLevel="11" Center="55.0,82.9">
+        <mapControl:Map Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" MaxZoomLevel="22" ZoomLevel="11" Center="55.0,82.9">
             <mapControl:Map.MapProjection>
-                <mapControl:WebMercatorProjection/>
+                <mapControl:WebMercatorProjection />
             </mapControl:Map.MapProjection>
             <mapControl:Map.MapLayer>
-                <mapControl:WmsImageLayer ServiceUri="https://ows.terrestris.de/osm/service" Layers="OSM-WMS"/>
+                <mapControl:WmsImageLayer ServiceUri="https://ows.terrestris.de/osm/service" Layers="OSM-WMS" />
             </mapControl:Map.MapLayer>
-            
+
             <mapControl:MapItemsControl ItemsSource="{Binding Stations}">
                 <mapControl:MapItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <mapControl:Pushpin Location="{Binding Location}" Content="{Binding Name}"/>
+                        <mapControl:Pushpin Location="{Binding Location}" Content="{Binding Name}" />
                     </DataTemplate>
                 </mapControl:MapItemsControl.ItemTemplate>
                 <mapControl:MapItemsControl.ItemContainerStyle>
                     <Style TargetType="mapControl:MapItem">
-                        <Setter Property="AutoCollapse" Value="True"/>
-                        <Setter Property="Location" Value="{Binding Location}"/>
-                        <Setter Property="VerticalAlignment" Value="Bottom"/>
+                        <Setter Property="AutoCollapse" Value="True" />
+                        <Setter Property="Location" Value="{Binding Location}" />
+                        <Setter Property="VerticalAlignment" Value="Bottom" />
                     </Style>
                 </mapControl:MapItemsControl.ItemContainerStyle>
             </mapControl:MapItemsControl>
