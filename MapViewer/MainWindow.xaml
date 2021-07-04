@@ -20,7 +20,10 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Button Grid.Column="0" Grid.Row="0" Content="Edit" Margin="8" Click="EditStation"/>
+        <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal">
+            <Button Content="Edit" Margin="8" Click="EditStation"/>
+            <Button Content="Filters" Margin="8" Click="EditFilters"/>
+        </StackPanel>
 
         <ListBox x:Name="GasStationListBox" Grid.Column="0" Grid.Row="1" ItemsSource="{Binding Stations}">
             <ListBox.ItemTemplate>
