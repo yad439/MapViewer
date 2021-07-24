@@ -1,8 +1,11 @@
 using System.Collections.Generic;
 using System.Windows.Data;
+
 using AutoMapper;
 
-namespace MapViewer {
+using MapViewer.Domain;
+
+namespace MapViewer.Presentation {
 	internal sealed class MapViewModel {
 		public IEnumerable<GasStationViewModel> Stations { get; }
 

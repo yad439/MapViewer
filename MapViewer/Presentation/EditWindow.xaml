@@ -1,11 +1,11 @@
-﻿<Window x:Class="MapViewer.EditWindow"
+﻿<Window x:Class="MapViewer.Presentation.EditWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MapViewer"
         mc:Ignorable="d"
-        d:DataContext="{d:DesignInstance local:GasStation}"
+        d:DataContext="{d:DesignInstance local:Domain.GasStation}"
         Title="Edit" x:ClassModifier="internal" SizeToContent="WidthAndHeight">
     <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center">
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" FlowDirection="RightToLeft">

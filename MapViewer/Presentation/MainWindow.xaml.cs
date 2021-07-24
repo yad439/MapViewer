@@ -1,8 +1,11 @@
-﻿using AutoMapper;
-using MapControl;
-using System.Linq;
+﻿using System.Linq;
 
-namespace MapViewer {
+using AutoMapper;
+using MapControl;
+
+using MapViewer.Domain;
+
+namespace MapViewer.Presentation {
 	internal sealed partial class MainWindow {
 		private readonly IMapper _mapper;
 		private readonly MapViewModel _model;

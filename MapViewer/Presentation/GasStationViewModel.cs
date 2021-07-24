@@ -1,7 +1,8 @@
 using System.ComponentModel;
+
 using MapControl;
 
-namespace MapViewer {
+namespace MapViewer.Presentation {
 	internal sealed class GasStationViewModel : INotifyPropertyChanged {
 		private string? _name;
 

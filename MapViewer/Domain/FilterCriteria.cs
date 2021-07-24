@@ -1,8 +1,8 @@
 using System;
 
-namespace MapViewer {
+namespace MapViewer.Domain {
 	internal sealed class FilterCriteria<T> {
-		internal Func<T,object?> Getter { get; }
+		internal Func<T, object?> Getter { get; }
 		internal ComparisonType Type { get; }
 		internal object Value { get; }
 

@@ -1,4 +1,4 @@
-﻿namespace MapViewer {
+﻿namespace MapViewer.Presentation {
 	internal sealed partial class EditWindow {
 		internal GasStationEditDto Data { get; }
 

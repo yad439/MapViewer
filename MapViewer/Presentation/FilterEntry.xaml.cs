@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using MapViewer.Domain;
+
+using System.Collections.Generic;
 using System.Windows.Controls;
 
-namespace MapViewer {
+namespace MapViewer.Presentation {
 	internal sealed partial class FilterEntry {
 		private GetHelper<GasStationViewModel> _selected = null!;
 		public IEnumerable<GetHelper<GasStationViewModel>> Properties { get; }

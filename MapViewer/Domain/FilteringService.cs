@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MapViewer {
+namespace MapViewer.Domain {
 	internal sealed class FilteringService<T> {
 		internal static Predicate<T> GetPredicate(IEnumerable<FilterCriteria<T>> filters) {
 			var predicates = filters.Select(GetPredicate).ToArray();
@@ -12,7 +12,7 @@ namespace MapViewer {
 		private static Predicate<T> GetPredicate(FilterCriteria<T> criteria) {
 			return criteria.Value switch {
 				string => MatchString(criteria),
-				_      => throw new NotSupportedException("Invalid value type")
+				_ => throw new NotSupportedException("Invalid value type")
 			};
 		}
 

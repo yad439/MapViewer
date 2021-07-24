@@ -1,7 +1,10 @@
 using System.Globalization;
+
 using RestSharp;
 
-namespace MapViewer {
+using MapViewer.Domain;
+
+namespace MapViewer.Data {
 	internal sealed class OpenStreetMapRuDataSource {
 		private readonly RestClient _client = new("http://openstreetmap.ru/api/poi");
 

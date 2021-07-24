@@ -1,8 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
+
 using LiteDB;
 
-namespace MapViewer {
+using MapViewer.Domain;
+
+namespace MapViewer.Data {
 	internal sealed class LiteDbRepository {
 		private readonly string _file = Configuration.AppDirectory + "\\stations.db";
 

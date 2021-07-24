@@ -1,6 +1,8 @@
 using System.IO;
 using System.Reflection;
 
+using MapViewer.Domain;
+
 namespace MapViewer {
 	internal static class Configuration {
 		internal static readonly MapRectangle NovosibirskArea = new() {

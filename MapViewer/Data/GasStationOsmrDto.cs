@@ -1,4 +1,4 @@
-namespace MapViewer {
+namespace MapViewer.Data {
 	internal sealed class GasStationOsmrDto {
 		public string? NameRu { get; init; }
 		public double Lat { get; init; }

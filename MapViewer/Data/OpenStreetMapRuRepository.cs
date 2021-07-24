@@ -1,8 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
+
 using AutoMapper;
 
-namespace MapViewer {
+using MapViewer.Domain;
+
+namespace MapViewer.Data {
 	internal sealed class OpenStreetMapRuRepository {
 		private readonly OpenStreetMapRuDataSource _dataSource;
 		private readonly IMapper _mapper;

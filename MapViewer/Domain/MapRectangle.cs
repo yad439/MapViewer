@@ -1,4 +1,4 @@
-namespace MapViewer {
+namespace MapViewer.Domain {
 	internal struct MapRectangle {
 		internal double North { get; init; }
 		internal double South { get; init; }

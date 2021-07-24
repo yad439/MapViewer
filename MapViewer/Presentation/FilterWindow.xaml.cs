@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using MapViewer.Domain;
+
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace MapViewer {
+namespace MapViewer.Presentation {
 	internal sealed partial class FilterWindow {
 		private readonly IList<GetHelper<GasStationViewModel>> _helpers;
 		public ObservableCollection<FilterEntry> Filters { get; } = new();

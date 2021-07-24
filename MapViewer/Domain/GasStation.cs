@@ -1,6 +1,6 @@
 using MapControl;
 
-namespace MapViewer {
+namespace MapViewer.Domain {
 	internal sealed class GasStation {
 		public int Id { get; init; }
 		public string? Name { get; init; }

@@ -1,8 +1,13 @@
 ﻿using System.Diagnostics;
 using System.Windows;
+
+using Microsoft.Extensions.DependencyInjection;
 using AutoMapper;
 using MapControl;
-using Microsoft.Extensions.DependencyInjection;
+
+using MapViewer.Data;
+using MapViewer.Domain;
+using MapViewer.Presentation;
 
 namespace MapViewer {
 	internal sealed partial class App {
