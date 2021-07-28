@@ -3,11 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MapViewer"
+        xmlns:presentation="clr-namespace:MapViewer.Presentation"
         xmlns:mapControl="clr-namespace:MapControl;assembly=MapControl.WPF"
         mc:Ignorable="d"
         Title="Map viewer" Height="450" Width="800" x:ClassModifier="internal"
-        d:DataContext="{d:DesignInstance local:Presentation.MapViewModel}">
+        d:DataContext="{d:DesignInstance presentation:MapViewModel}">
     <Window.Resources>
     </Window.Resources>
     <Grid>
@@ -28,7 +28,7 @@
         <ListBox x:Name="GasStationListBox" Grid.Column="0" Grid.Row="1" ItemsSource="{Binding Stations}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <local:StationListEntryControl DataContext="{Binding}" />
+                    <presentation:StationListEntryControl DataContext="{Binding}" />
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

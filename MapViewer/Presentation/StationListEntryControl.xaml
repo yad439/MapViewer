@@ -3,9 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:MapViewer"
+             xmlns:domain="clr-namespace:MapViewer.Domain"
              mc:Ignorable="d"
-             d:DesignHeight="100" d:DesignWidth="200" d:DataContext="{d:DesignInstance local:Domain.GasStation}"
+             d:DesignHeight="100" d:DesignWidth="200" d:DataContext="{d:DesignInstance domain:GasStation}"
              x:ClassModifier="internal">
     <Grid>
         <Label Content="{Binding Name}" HorizontalAlignment="Center" Margin="4" VerticalAlignment="Top"

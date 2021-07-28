@@ -3,9 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MapViewer"
+        xmlns:domain="clr-namespace:MapViewer.Domain"
         mc:Ignorable="d"
-        d:DataContext="{d:DesignInstance local:Domain.GasStation}"
+        d:DataContext="{d:DesignInstance domain:GasStation}"
         Title="Edit" x:ClassModifier="internal" SizeToContent="WidthAndHeight">
     <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center">
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" FlowDirection="RightToLeft">
