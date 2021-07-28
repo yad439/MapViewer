@@ -1,5 +1,5 @@
 namespace MapViewer.Domain {
-	internal struct MapRectangle {
+	internal readonly struct MapRectangle {
 		internal double North { get; init; }
 		internal double South { get; init; }
 		internal double West { get; init; }
