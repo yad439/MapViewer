@@ -13,7 +13,7 @@ namespace MapViewer.Domain {
 
 		internal IEnumerable<GasStation> GetAll() {
 			var data = _localRepository.GetAll();
-			if (data.Length != 0) return data;
+			if (data.Count != 0) return data;
 
 			var newData = _remoteRepository.GetInArea(Configuration.NovosibirskArea);
 			Debug.Assert(newData != null, nameof(newData) + " != null");

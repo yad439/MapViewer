@@ -15,9 +15,9 @@ namespace MapViewer.Data {
 			_mapper = mapper;
 		}
 
-		GasStation[]? IRemoteRepository.GetInArea(MapRectangle area) {
+		IList<GasStation>? IRemoteRepository.GetInArea(MapRectangle area) {
 			var data = _dataSource.GetStationsInArea(area);
-			return _mapper.Map<IEnumerable<GasStationOsmrDto>?, IEnumerable<GasStation>?>(data?.Data)?.ToArray();
+			return _mapper.Map<IEnumerable<GasStationOsmrDto>?, IEnumerable<GasStation>?>(data?.Data)?.ToList();
 		}
 	}
 }

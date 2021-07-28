@@ -9,10 +9,10 @@ namespace MapViewer.Data {
 	internal sealed class LiteDbRepository : ILocalRepository {
 		private readonly string _file = Configuration.AppDirectory + "\\stations.db";
 
-		GasStation[] ILocalRepository.GetAll() {
+		IList<GasStation> ILocalRepository.GetAll() {
 			using var database = new LiteDatabase(_file);
 			var collection = database.GetCollection<GasStation>();
-			return collection.FindAll().ToArray();
+			return collection.FindAll().ToList();
 		}
 
 		void ILocalRepository.InsertAll(IEnumerable<GasStation> data) {

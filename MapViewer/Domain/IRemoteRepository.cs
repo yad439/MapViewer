@@ -1,5 +1,7 @@
+using System.Collections.Generic;
+
 namespace MapViewer.Domain {
 	internal interface IRemoteRepository {
-		internal GasStation[]? GetInArea(MapRectangle area);
+		internal IList<GasStation>? GetInArea(MapRectangle area);
 	}
 }
