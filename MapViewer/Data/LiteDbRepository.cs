@@ -6,16 +6,16 @@ using LiteDB;
 using MapViewer.Domain;
 
 namespace MapViewer.Data {
-	internal sealed class LiteDbRepository {
+	internal sealed class LiteDbRepository : ILocalRepository {
 		private readonly string _file = Configuration.AppDirectory + "\\stations.db";
 
-		internal GasStation[] GetAll() {
+		GasStation[] ILocalRepository.GetAll() {
 			using var database = new LiteDatabase(_file);
 			var collection = database.GetCollection<GasStation>();
 			return collection.FindAll().ToArray();
 		}
 
-		internal void InsertAll(IEnumerable<GasStation> data) {
+		void ILocalRepository.InsertAll(IEnumerable<GasStation> data) {
 			using var database = new LiteDatabase(_file);
 			var collection = database.GetCollection<GasStation>();
 			collection.Insert(data);

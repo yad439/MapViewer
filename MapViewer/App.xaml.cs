@@ -2,7 +2,9 @@
 using System.Windows;
 
 using Microsoft.Extensions.DependencyInjection;
+
 using AutoMapper;
+
 using MapControl;
 
 using MapViewer.Data;
@@ -20,8 +22,8 @@ namespace MapViewer {
 						   .AddSingleton<MapViewModel>()
 						   .AddSingleton<IMapper>(_ => new Mapper(mapping))
 						   .AddSingleton<OpenStreetMapRuDataSource>()
-						   .AddSingleton<OpenStreetMapRuRepository>()
-						   .AddSingleton<LiteDbRepository>()
+						   .AddSingleton<IRemoteRepository, OpenStreetMapRuRepository>()
+						   .AddSingleton<ILocalRepository, LiteDbRepository>()
 						   .AddSingleton<DataService>()
 						   .BuildServiceProvider();
 

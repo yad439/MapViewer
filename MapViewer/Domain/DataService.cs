@@ -1,14 +1,12 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 
-using MapViewer.Data;
-
 namespace MapViewer.Domain {
 	internal sealed class DataService {
-		private readonly OpenStreetMapRuRepository _remoteRepository;
-		private readonly LiteDbRepository _localRepository;
+		private readonly IRemoteRepository _remoteRepository;
+		private readonly ILocalRepository _localRepository;
 
-		public DataService(OpenStreetMapRuRepository remoteRepository, LiteDbRepository localRepository) {
+		public DataService(IRemoteRepository remoteRepository, ILocalRepository localRepository) {
 			_remoteRepository = remoteRepository;
 			_localRepository = localRepository;
 		}
