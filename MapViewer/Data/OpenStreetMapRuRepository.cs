@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 
 using AutoMapper;
 
@@ -17,7 +16,7 @@ namespace MapViewer.Data {
 
 		IList<GasStation>? IRemoteRepository.GetInArea(MapRectangle area) {
 			var data = _dataSource.GetStationsInArea(area);
-			return _mapper.Map<IEnumerable<GasStationOsmrDto>?, IEnumerable<GasStation>?>(data?.Data)?.ToList();
+			return _mapper.Map<IEnumerable<GasStationOsmrDto>?, IList<GasStation>?>(data?.Data);
 		}
 	}
 }
