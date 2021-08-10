@@ -11,7 +11,7 @@ namespace MapViewer.Domain {
 			_localRepository = localRepository;
 		}
 
-		internal IEnumerable<GasStation> GetAll() {
+		internal IList<GasStation> GetAll() {
 			var data = _localRepository.GetAll();
 			if (data.Count != 0) return data;
 
