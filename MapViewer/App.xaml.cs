@@ -25,6 +25,8 @@ namespace MapViewer {
 						   .AddSingleton<IRemoteRepository, OpenStreetMapRuRepository>()
 						   .AddSingleton<ILocalRepository, LiteDbRepository>()
 						   .AddSingleton<DataService>()
+						   .AddSingleton<FiltersViewModel>()
+						   .AddSingleton(_ => Configuration.AvailableFilters)
 						   .BuildServiceProvider();
 
 			var mainWindow = services.GetService<MainWindow>();
